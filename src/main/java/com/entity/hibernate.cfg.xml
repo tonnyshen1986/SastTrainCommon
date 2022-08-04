@@ -13,8 +13,8 @@
     </session-factory>-->
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">123456789a+</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sjtu_train</property>
+        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.connection.url">jdbc:mysql://172.19.76.45:3306/sjtu_train</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
