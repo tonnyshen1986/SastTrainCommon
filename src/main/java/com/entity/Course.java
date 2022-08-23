@@ -2,11 +2,14 @@ package com.entity;
 
 // Generated 2020-7-31 13:57:38 by Hibernate Tools 3.4.0.CR1
 
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -19,389 +22,411 @@ import javax.persistence.TemporalType;
 @Table(name = "SJ_COURSE", catalog = "sjtu_train")
 public class Course implements java.io.Serializable {
 
-	private Integer id;
-	private Integer projectId;
-	private String name;
-	private Integer courseQuality;
-	private Integer studyType;
-	private Integer courseType;
-	private String courseGroupIds;
-	private String courseTeacher;
-	private String outSchoolTeacher;
-	private Date startTime;
-	private Date endTime;
-	private Double courseHour;
-	private String address;
-	private Integer personCount;
-	private Date signStartTime;
-	private Date signEndTime;
-	private String courseDesc;
-	private String testLibsStudy;
-	private String testSubLibsStudy;
-	private String caseLibsStudy;
-	private String videoLibsStudy;
-	private Integer testOrNot;
-	private Integer testType;
-	private String testLibs;
-	private String testSubLibs;
-	private Integer testRule;
-	private Integer testScope;
-	private Integer evaluateOrNot;
-	private Integer evaluateLib;
-	private Date createTime;
-	private Date updateTime;
-	private Integer courseStatus;
-	private Integer shareBy;
+    private Integer id;
+    private Integer projectId;
+    private String name;
+    private Integer courseQuality;
+    private Integer studyType;
+    private Integer courseType;
+    private String courseGroupIds;
+    private String courseTeacher;
+    private String outSchoolTeacher;
+    private Date startTime;
+    private Date endTime;
+    private Double courseHour;
+    private String address;
+    private Integer personCount;
+    private Date signStartTime;
+    private Date signEndTime;
+    private String courseDesc;
+    private String testLibsStudy;
+    private String testSubLibsStudy;
+    private String caseLibsStudy;
+    private String videoLibsStudy;
+    private Integer testOrNot;
+    private Integer testType;
+    private String testLibs;
+    private String testSubLibs;
+    private Integer testRule;
+    private Integer testScope;
+    private Integer evaluateOrNot;
+    private Integer evaluateLib;
+    private Date createTime;
+    private Date updateTime;
+    private Integer courseStatus;
+    private Integer shareBy;
+    private Double coursePriceBefore;
+    private Double coursePriceAfter;
 
-	public Course() {
-	}
+    public Course() {
+    }
 
-	public Course(Integer projectId, String name, Integer courseQuality,Integer studyType,
-			Integer courseType,String courseGroupIds, String courseTeacher,String outSchoolTeacher,
-			Date startTime, Date endTime, Double courseHour, String address,
-			Integer personCount, Date signStartTime, Date signEndTime,
-			String courseDesc, String testLibsStudy, String testSubLibsStudy,String caseLibsStudy,
-			String videoLibsStudy, Integer testOrNot, Integer testType,
-			String testLibs, String testSubLibs, Integer testRule,Integer testScope,
-			Integer evaluateOrNot, Integer evaluateLib, Date createTime,
-			Date updateTime, Integer courseStatus,Integer shareBy) {
-		this.projectId = projectId;
-		this.name = name;
-		this.courseQuality = courseQuality;
-		this.studyType = studyType;
-		this.courseType = courseType;
-		this.courseGroupIds = courseGroupIds;
-		this.courseTeacher = courseTeacher;
-		this.outSchoolTeacher = outSchoolTeacher;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.courseHour = courseHour;
-		this.address = address;
-		this.personCount = personCount;
-		this.signStartTime = signStartTime;
-		this.signEndTime = signEndTime;
-		this.courseDesc = courseDesc;
-		this.testLibsStudy = testLibsStudy;
-		this.testLibsStudy=testLibsStudy;
-		this.caseLibsStudy = caseLibsStudy;
-		this.videoLibsStudy = videoLibsStudy;
-		this.testOrNot = testOrNot;
-		this.testType = testType;
-		this.testLibs = testLibs;
-		this.testSubLibs = testSubLibs;
-		this.testRule = testRule;
-		this.testScope = testScope;
-		this.evaluateOrNot = evaluateOrNot;
-		this.evaluateLib = evaluateLib;
-		this.createTime = createTime;
-		this.updateTime = updateTime;
-		this.courseStatus = courseStatus;
-		this.shareBy = shareBy;
-	}
+    public Course(Integer projectId, String name, Integer courseQuality, Integer studyType,
+                  Integer courseType, String courseGroupIds, String courseTeacher, String outSchoolTeacher,
+                  Date startTime, Date endTime, Double courseHour, String address,
+                  Integer personCount, Date signStartTime, Date signEndTime,
+                  String courseDesc, String testLibsStudy, String testSubLibsStudy, String caseLibsStudy,
+                  String videoLibsStudy, Integer testOrNot, Integer testType,
+                  String testLibs, String testSubLibs, Integer testRule, Integer testScope,
+                  Integer evaluateOrNot, Integer evaluateLib, Date createTime,
+                  Date updateTime, Integer courseStatus, Integer shareBy, Double coursePriceBefore, Double coursePriceAfter) {
+        this.projectId = projectId;
+        this.name = name;
+        this.courseQuality = courseQuality;
+        this.studyType = studyType;
+        this.courseType = courseType;
+        this.courseGroupIds = courseGroupIds;
+        this.courseTeacher = courseTeacher;
+        this.outSchoolTeacher = outSchoolTeacher;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.courseHour = courseHour;
+        this.address = address;
+        this.personCount = personCount;
+        this.signStartTime = signStartTime;
+        this.signEndTime = signEndTime;
+        this.courseDesc = courseDesc;
+        this.testLibsStudy = testLibsStudy;
+        this.testLibsStudy = testLibsStudy;
+        this.caseLibsStudy = caseLibsStudy;
+        this.videoLibsStudy = videoLibsStudy;
+        this.testOrNot = testOrNot;
+        this.testType = testType;
+        this.testLibs = testLibs;
+        this.testSubLibs = testSubLibs;
+        this.testRule = testRule;
+        this.testScope = testScope;
+        this.evaluateOrNot = evaluateOrNot;
+        this.evaluateLib = evaluateLib;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.courseStatus = courseStatus;
+        this.shareBy = shareBy;
+        this.coursePriceBefore = coursePriceBefore;
+        this.coursePriceAfter = coursePriceAfter;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "ID", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "ID", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@Column(name = "PROJECT_ID")
-	public Integer getProjectId() {
-		return this.projectId;
-	}
+    @Column(name = "PROJECT_ID")
+    public Integer getProjectId() {
+        return this.projectId;
+    }
 
-	public void setProjectId(Integer projectId) {
-		this.projectId = projectId;
-	}
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
 
-	@Column(name = "NAME")
-	public String getName() {
-		return this.name;
-	}
+    @Column(name = "NAME")
+    public String getName() {
+        return this.name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Column(name = "COURSE_QUALITY")
-	public Integer getCourseQuality() {
-		return this.courseQuality;
-	}
+    @Column(name = "COURSE_QUALITY")
+    public Integer getCourseQuality() {
+        return this.courseQuality;
+    }
 
-	public void setCourseQuality(Integer courseQuality) {
-		this.courseQuality = courseQuality;
-	}
+    public void setCourseQuality(Integer courseQuality) {
+        this.courseQuality = courseQuality;
+    }
 
-	@Column(name = "STUDY_TYPE")
-	public Integer getStudyType() {
-		return this.studyType;
-	}
+    @Column(name = "STUDY_TYPE")
+    public Integer getStudyType() {
+        return this.studyType;
+    }
 
-	public void setStudyType(Integer studyType) {
-		this.studyType = studyType;
-	}
+    public void setStudyType(Integer studyType) {
+        this.studyType = studyType;
+    }
 
-	@Column(name = "COURSE_TYPE")
-	public Integer getCourseType() {
-		return this.courseType;
-	}
+    @Column(name = "COURSE_TYPE")
+    public Integer getCourseType() {
+        return this.courseType;
+    }
 
-	public void setCourseType(Integer courseType) {
-		this.courseType = courseType;
-	}
-	
-	@Column(name = "COURSE_GROUP_IDS")
-	public String getCourseGroupIds() {
-		return courseGroupIds;
-	}
+    public void setCourseType(Integer courseType) {
+        this.courseType = courseType;
+    }
 
-	public void setCourseGroupIds(String courseGroupIds) {
-		this.courseGroupIds = courseGroupIds;
-	}
+    @Column(name = "COURSE_GROUP_IDS")
+    public String getCourseGroupIds() {
+        return courseGroupIds;
+    }
 
-	@Column(name = "COURSE_TEACHER")
-	public String getCourseTeacher() {
-		return this.courseTeacher;
-	}
+    public void setCourseGroupIds(String courseGroupIds) {
+        this.courseGroupIds = courseGroupIds;
+    }
 
-	public void setCourseTeacher(String courseTeacher) {
-		this.courseTeacher = courseTeacher;
-	}
-	
-	@Column(name = "OUT_SCHOOL_TEACHER")
-	public String getOutSchoolTeacher() {
-		return outSchoolTeacher;
-	}
+    @Column(name = "COURSE_TEACHER")
+    public String getCourseTeacher() {
+        return this.courseTeacher;
+    }
 
-	public void setOutSchoolTeacher(String outSchoolTeacher) {
-		this.outSchoolTeacher = outSchoolTeacher;
-	}
+    public void setCourseTeacher(String courseTeacher) {
+        this.courseTeacher = courseTeacher;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "START_TIME", length = 19)
-	public Date getStartTime() {
-		return this.startTime;
-	}
+    @Column(name = "OUT_SCHOOL_TEACHER")
+    public String getOutSchoolTeacher() {
+        return outSchoolTeacher;
+    }
 
-	public void setStartTime(Date startTime) {
-		this.startTime = startTime;
-	}
+    public void setOutSchoolTeacher(String outSchoolTeacher) {
+        this.outSchoolTeacher = outSchoolTeacher;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "END_TIME", length = 19)
-	public Date getEndTime() {
-		return this.endTime;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "START_TIME", length = 19)
+    public Date getStartTime() {
+        return this.startTime;
+    }
 
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
-	}
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
 
-	@Column(name = "COURSE_HOUR", precision = 22, scale = 0)
-	public Double getCourseHour() {
-		return this.courseHour;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "END_TIME", length = 19)
+    public Date getEndTime() {
+        return this.endTime;
+    }
 
-	public void setCourseHour(Double courseHour) {
-		this.courseHour = courseHour;
-	}
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
 
-	@Column(name = "ADDRESS")
-	public String getAddress() {
-		return this.address;
-	}
+    @Column(name = "COURSE_HOUR", precision = 22, scale = 0)
+    public Double getCourseHour() {
+        return this.courseHour;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setCourseHour(Double courseHour) {
+        this.courseHour = courseHour;
+    }
 
-	@Column(name = "PERSON_COUNT")
-	public Integer getPersonCount() {
-		return this.personCount;
-	}
+    @Column(name = "ADDRESS")
+    public String getAddress() {
+        return this.address;
+    }
 
-	public void setPersonCount(Integer personCount) {
-		this.personCount = personCount;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "SIGN_START_TIME", length = 19)
-	public Date getSignStartTime() {
-		return this.signStartTime;
-	}
+    @Column(name = "PERSON_COUNT")
+    public Integer getPersonCount() {
+        return this.personCount;
+    }
 
-	public void setSignStartTime(Date signStartTime) {
-		this.signStartTime = signStartTime;
-	}
+    public void setPersonCount(Integer personCount) {
+        this.personCount = personCount;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "SIGN_END_TIME", length = 19)
-	public Date getSignEndTime() {
-		return this.signEndTime;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "SIGN_START_TIME", length = 19)
+    public Date getSignStartTime() {
+        return this.signStartTime;
+    }
 
-	public void setSignEndTime(Date signEndTime) {
-		this.signEndTime = signEndTime;
-	}
+    public void setSignStartTime(Date signStartTime) {
+        this.signStartTime = signStartTime;
+    }
 
-	@Column(name = "COURSE_DESC")
-	public String getCourseDesc() {
-		return this.courseDesc;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "SIGN_END_TIME", length = 19)
+    public Date getSignEndTime() {
+        return this.signEndTime;
+    }
 
-	public void setCourseDesc(String courseDesc) {
-		this.courseDesc = courseDesc;
-	}
+    public void setSignEndTime(Date signEndTime) {
+        this.signEndTime = signEndTime;
+    }
 
-	@Column(name = "TEST_LIBS_STUDY")
-	public String getTestLibsStudy() {
-		return this.testLibsStudy;
-	}
+    @Column(name = "COURSE_DESC")
+    public String getCourseDesc() {
+        return this.courseDesc;
+    }
 
-	public void setTestLibsStudy(String testLibsStudy) {
-		this.testLibsStudy = testLibsStudy;
-	}
-	
-	@Column(name = "TEST_SUB_LIBS_STUDY")
-	public String getTestSubLibsStudy() {
-		return testSubLibsStudy;
-	}
+    public void setCourseDesc(String courseDesc) {
+        this.courseDesc = courseDesc;
+    }
 
-	public void setTestSubLibsStudy(String testSubLibsStudy) {
-		this.testSubLibsStudy = testSubLibsStudy;
-	}
+    @Column(name = "TEST_LIBS_STUDY")
+    public String getTestLibsStudy() {
+        return this.testLibsStudy;
+    }
 
-	@Column(name = "CASE_LIBS_STUDY")
-	public String getCaseLibsStudy() {
-		return this.caseLibsStudy;
-	}
+    public void setTestLibsStudy(String testLibsStudy) {
+        this.testLibsStudy = testLibsStudy;
+    }
 
-	public void setCaseLibsStudy(String caseLibsStudy) {
-		this.caseLibsStudy = caseLibsStudy;
-	}
+    @Column(name = "TEST_SUB_LIBS_STUDY")
+    public String getTestSubLibsStudy() {
+        return testSubLibsStudy;
+    }
 
-	@Column(name = "VIDEO_LIBS_STUDY")
-	public String getVideoLibsStudy() {
-		return this.videoLibsStudy;
-	}
+    public void setTestSubLibsStudy(String testSubLibsStudy) {
+        this.testSubLibsStudy = testSubLibsStudy;
+    }
 
-	public void setVideoLibsStudy(String videoLibsStudy) {
-		this.videoLibsStudy = videoLibsStudy;
-	}
+    @Column(name = "CASE_LIBS_STUDY")
+    public String getCaseLibsStudy() {
+        return this.caseLibsStudy;
+    }
 
-	@Column(name = "TEST_OR_NOT")
-	public Integer getTestOrNot() {
-		return this.testOrNot;
-	}
+    public void setCaseLibsStudy(String caseLibsStudy) {
+        this.caseLibsStudy = caseLibsStudy;
+    }
 
-	public void setTestOrNot(Integer testOrNot) {
-		this.testOrNot = testOrNot;
-	}
+    @Column(name = "VIDEO_LIBS_STUDY")
+    public String getVideoLibsStudy() {
+        return this.videoLibsStudy;
+    }
 
-	@Column(name = "TEST_TYPE")
-	public Integer getTestType() {
-		return this.testType;
-	}
+    public void setVideoLibsStudy(String videoLibsStudy) {
+        this.videoLibsStudy = videoLibsStudy;
+    }
 
-	public void setTestType(Integer testType) {
-		this.testType = testType;
-	}
+    @Column(name = "TEST_OR_NOT")
+    public Integer getTestOrNot() {
+        return this.testOrNot;
+    }
 
-	@Column(name = "TEST_LIBS")
-	public String getTestLibs() {
-		return this.testLibs;
-	}
+    public void setTestOrNot(Integer testOrNot) {
+        this.testOrNot = testOrNot;
+    }
 
-	public void setTestLibs(String testLibs) {
-		this.testLibs = testLibs;
-	}
+    @Column(name = "TEST_TYPE")
+    public Integer getTestType() {
+        return this.testType;
+    }
 
-	@Column(name = "TEST_SUB_LIBS")
-	public String getTestSubLibs() {
-		return this.testSubLibs;
-	}
+    public void setTestType(Integer testType) {
+        this.testType = testType;
+    }
 
-	public void setTestSubLibs(String testSubLibs) {
-		this.testSubLibs = testSubLibs;
-	}
+    @Column(name = "TEST_LIBS")
+    public String getTestLibs() {
+        return this.testLibs;
+    }
 
-	@Column(name = "TEST_RULE")
-	public Integer getTestRule() {
-		return this.testRule;
-	}
-	
-	public void setTestRule(Integer testRule) {
-		this.testRule = testRule;
-	}
-	
-	@Column(name = "TEST_SCOPE")
-	public Integer getTestScope() {
-		return testScope;
-	}
+    public void setTestLibs(String testLibs) {
+        this.testLibs = testLibs;
+    }
 
-	public void setTestScope(Integer testScope) {
-		this.testScope = testScope;
-	}
+    @Column(name = "TEST_SUB_LIBS")
+    public String getTestSubLibs() {
+        return this.testSubLibs;
+    }
 
-	@Column(name = "EVALUATE_OR_NOT")
-	public Integer getEvaluateOrNot() {
-		return this.evaluateOrNot;
-	}
+    public void setTestSubLibs(String testSubLibs) {
+        this.testSubLibs = testSubLibs;
+    }
 
-	public void setEvaluateOrNot(Integer evaluateOrNot) {
-		this.evaluateOrNot = evaluateOrNot;
-	}
+    @Column(name = "TEST_RULE")
+    public Integer getTestRule() {
+        return this.testRule;
+    }
 
-	@Column(name = "EVALUATE_LIB")
-	public Integer getEvaluateLib() {
-		return this.evaluateLib;
-	}
+    public void setTestRule(Integer testRule) {
+        this.testRule = testRule;
+    }
 
-	public void setEvaluateLib(Integer evaluateLib) {
-		this.evaluateLib = evaluateLib;
-	}
+    @Column(name = "TEST_SCOPE")
+    public Integer getTestScope() {
+        return testScope;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATE_TIME", length = 19)
-	public Date getCreateTime() {
-		return this.createTime;
-	}
+    public void setTestScope(Integer testScope) {
+        this.testScope = testScope;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    @Column(name = "EVALUATE_OR_NOT")
+    public Integer getEvaluateOrNot() {
+        return this.evaluateOrNot;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME", length = 19)
-	public Date getUpdateTime() {
-		return this.updateTime;
-	}
+    public void setEvaluateOrNot(Integer evaluateOrNot) {
+        this.evaluateOrNot = evaluateOrNot;
+    }
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+    @Column(name = "EVALUATE_LIB")
+    public Integer getEvaluateLib() {
+        return this.evaluateLib;
+    }
 
-	@Column(name = "COURSE_STATUS")
-	public Integer getCourseStatus() {
-		return this.courseStatus;
-	}
+    public void setEvaluateLib(Integer evaluateLib) {
+        this.evaluateLib = evaluateLib;
+    }
 
-	public void setCourseStatus(Integer courseStatus) {
-		this.courseStatus = courseStatus;
-	}
-	
-	@Column(name = "SHARE_BY")
-	public Integer getShareBy() {
-		return shareBy;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CREATE_TIME", length = 19)
+    public Date getCreateTime() {
+        return this.createTime;
+    }
 
-	public void setShareBy(Integer shareBy) {
-		this.shareBy = shareBy;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "UPDATE_TIME", length = 19)
+    public Date getUpdateTime() {
+        return this.updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    @Column(name = "COURSE_STATUS")
+    public Integer getCourseStatus() {
+        return this.courseStatus;
+    }
+
+    public void setCourseStatus(Integer courseStatus) {
+        this.courseStatus = courseStatus;
+    }
+
+    @Column(name = "SHARE_BY")
+    public Integer getShareBy() {
+        return shareBy;
+    }
+
+    public void setShareBy(Integer shareBy) {
+        this.shareBy = shareBy;
+    }
+
+    @Column(name = "COURSE_PRICE_BEFORE")
+    public Double getCoursePriceBefore() {
+        return coursePriceBefore;
+    }
+
+    public void setCoursePriceBefore(Double coursePriceBefore) {
+        this.coursePriceBefore = coursePriceBefore;
+    }
+
+    @Column(name = "COURSE_PRICE_AFTER")
+    public Double getCoursePriceAfter() {
+        return coursePriceAfter;
+    }
+
+    public void setCoursePriceAfter(Double coursePriceAfter) {
+        this.coursePriceAfter = coursePriceAfter;
+    }
 
 }

@@ -55,6 +55,10 @@ public class TeacherInfo implements java.io.Serializable {
 	private String zwzj;
 	private Integer deleteFlag;
 
+
+	private String accountPwd;
+	private Integer sfzc;
+
 	public TeacherInfo() {
 	}
 
@@ -378,4 +382,22 @@ public class TeacherInfo implements java.io.Serializable {
 		this.deleteFlag = deleteFlag;
 	}
 
+
+	@Column(name = "ACCOUNTPWD")
+	public String getAccountPwd() {
+		return accountPwd;
+	}
+
+	public void setAccountPwd(String accountPwd) {
+		this.accountPwd = accountPwd;
+	}
+
+	@Column(name = "SFZC")
+	public Integer getSfzc() {
+		return sfzc;
+	}
+
+	public void setSfzc(Integer sfzc) {
+		this.sfzc = sfzc;
+	}
 }
