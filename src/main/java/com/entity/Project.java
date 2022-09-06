@@ -35,6 +35,7 @@ public class Project implements java.io.Serializable {
     private Integer unionOrNot;
     private String unionOrganis;
     private String header;
+    private String leader;
     private String coManagers;
     private String imagePath;
     private Integer entryType;
@@ -69,6 +70,7 @@ public class Project implements java.io.Serializable {
     private String trainSchool;
     private String trainLocation;
     private String projectContent;
+    private String projectOrganizerName;
 
     public Project() {
     }
@@ -76,7 +78,7 @@ public class Project implements java.io.Serializable {
     public Project(Integer id, String organiCode, String createBy, String name,
                    Integer projectType, Integer projectLevel, Integer trainType,
                    Date trainStartTime, Date trainEndTime, Integer unionOrNot,
-                   String unionOrganis, String header, String coManagers,
+                   String unionOrganis, String header, String leader, String coManagers,
                    String imagePath, Integer entryType, Integer totalNumber, Integer teacherOrNot,
                    Integer outSchoolOrNot, Integer studentOrNot, Integer acrossOrNot,
                    Integer acrossYear, Date signStartTime, Date signEndTime,
@@ -84,7 +86,7 @@ public class Project implements java.io.Serializable {
                    Integer testOrNot, Integer testType, String testLibs,
                    String testSubLibs, Integer testRule, Integer reportOrNot,
                    Integer evaluateOrNot, Integer evaluateLib, Integer projectStatus, Integer isOutSchool,
-                   Integer isHistory, Date planFinishTime, Integer gatherOrNot, Integer certTempId, Double trainPrice, String trainHost, String trainSchool, String trainLocation, String projectContent) {
+                   Integer isHistory, Date planFinishTime, Integer gatherOrNot, Integer certTempId, Double trainPrice, String trainHost, String trainSchool, String trainLocation, String projectContent, String projectOrganizerName) {
         this.id = id;
         this.organiCode = organiCode;
         this.createBy = createBy;
@@ -97,6 +99,7 @@ public class Project implements java.io.Serializable {
         this.unionOrNot = unionOrNot;
         this.unionOrganis = unionOrganis;
         this.header = header;
+        this.leader = leader;
         this.coManagers = coManagers;
         this.imagePath = imagePath;
         this.entryType = entryType;
@@ -131,6 +134,7 @@ public class Project implements java.io.Serializable {
         this.trainSchool = trainSchool;
         this.trainLocation = trainLocation;
         this.projectContent = projectContent;
+        this.projectOrganizerName = projectOrganizerName;
     }
 
     @Id
@@ -243,6 +247,15 @@ public class Project implements java.io.Serializable {
 
     public void setHeader(String header) {
         this.header = header;
+    }
+
+    @Column(name = "LEADER")
+    public String getLeader() {
+        return this.leader;
+    }
+
+    public void setLeader(String leader) {
+        this.leader = leader;
     }
 
     @Column(name = "CO_MANAGERS", length = 2550)
@@ -555,4 +568,14 @@ public class Project implements java.io.Serializable {
     public void setProjectContent(String projectContent) {
         this.projectContent = projectContent;
     }
+
+    @Column(name = "PROJECT_ORGANIZERNAME")
+    public String getProjectOrganizerName() {
+        return projectOrganizerName;
+    }
+
+    public void setProjectOrganizerName(String projectOrganizerName) {
+        this.projectOrganizerName = projectOrganizerName;
+    }
+
 }

@@ -6,7 +6,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -19,115 +21,145 @@ import javax.persistence.TemporalType;
 @Table(name = "SJ_APPLY_PROJECT", catalog = "sjtu_train")
 public class ApplyProject implements java.io.Serializable {
 
-	private Integer id;
-	private String account;
-	private String certifiNo;
-	private Integer personType;
-	private Integer projectId;
-	private Integer approveResult;
-	private String processInstanceId;
-	private Date createTime;
-	private Date updateTime;
+    private Integer id;
+    private String account;
+    private String certifiNo;
+    private Integer personType;
+    private Integer projectId;
+    private Integer approveResult;
+    private Integer managerApproveResult;
+    private Integer hrApproveResult;
+    private Integer sldApproveResult;
+    private String processInstanceId;
+    private Date createTime;
+    private Date updateTime;
 
-	public ApplyProject() {
-	}
+    public ApplyProject() {
+    }
 
-	public ApplyProject(String account, String certifiNo, Integer personType,
-			Integer projectId,Integer approveResult, String processInstanceId, 
-			Date createTime,Date updateTime) {
-		this.account = account;
-		this.certifiNo = certifiNo;
-		this.personType = personType;
-		this.projectId = projectId;
-		this.approveResult = approveResult;
-		this.processInstanceId = processInstanceId;
-		this.createTime = createTime;
-		this.updateTime = updateTime;
-	}
+    public ApplyProject(String account, String certifiNo, Integer personType,
+                        Integer projectId, Integer approveResult, String processInstanceId,
+                        Date createTime, Date updateTime) {
+        this.account = account;
+        this.certifiNo = certifiNo;
+        this.personType = personType;
+        this.projectId = projectId;
+        this.approveResult = approveResult;
+        this.processInstanceId = processInstanceId;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "ID", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "ID", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@Column(name = "ACCOUNT")
-	public String getAccount() {
-		return this.account;
-	}
+    @Column(name = "ACCOUNT")
+    public String getAccount() {
+        return this.account;
+    }
 
-	public void setAccount(String account) {
-		this.account = account;
-	}
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-	@Column(name = "CERTIFI_NO")
-	public String getCertifiNo() {
-		return certifiNo;
-	}
+    @Column(name = "CERTIFI_NO")
+    public String getCertifiNo() {
+        return certifiNo;
+    }
 
-	public void setCertifiNo(String certifiNo) {
-		this.certifiNo = certifiNo;
-	}
+    public void setCertifiNo(String certifiNo) {
+        this.certifiNo = certifiNo;
+    }
 
-	@Column(name = "PERSON_TYPE")
-	public Integer getPersonType() {
-		return this.personType;
-	}
+    @Column(name = "PERSON_TYPE")
+    public Integer getPersonType() {
+        return this.personType;
+    }
 
-	public void setPersonType(Integer personType) {
-		this.personType = personType;
-	}
+    public void setPersonType(Integer personType) {
+        this.personType = personType;
+    }
 
-	@Column(name = "PROJECT_ID")
-	public Integer getProjectId() {
-		return this.projectId;
-	}
+    @Column(name = "PROJECT_ID")
+    public Integer getProjectId() {
+        return this.projectId;
+    }
 
-	public void setProjectId(Integer projectId) {
-		this.projectId = projectId;
-	}
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
 
-	@Column(name = "APPROVE_RESULT")
-	public Integer getApproveResult() {
-		return this.approveResult;
-	}
+    @Column(name = "APPROVE_RESULT")
+    public Integer getApproveResult() {
+        return this.approveResult;
+    }
 
-	public void setApproveResult(Integer approveResult) {
-		this.approveResult = approveResult;
-	}
+    public void setApproveResult(Integer approveResult) {
+        this.approveResult = approveResult;
+    }
 
-	@Column(name = "PROCESS_INSTANCE_ID")
-	public String getProcessInstanceId() {
-		return this.processInstanceId;
-	}
+    @Column(name = "MANAGERAPPROVE_RESULT")
+    public Integer getManagerApproveResult() {
+        return this.managerApproveResult;
+    }
 
-	public void setProcessInstanceId(String processInstanceId) {
-		this.processInstanceId = processInstanceId;
-	}
+    public void setManagerApproveResult(Integer managerApproveResult) {
+        this.managerApproveResult = managerApproveResult;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATE_TIME", length = 19)
-	public Date getCreateTime() {
-		return this.createTime;
-	}
+    @Column(name = "HRAPPROVE_RESULT")
+    public Integer getHrApproveResult() {
+        return this.hrApproveResult;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public void setHrApproveResult(Integer hrApproveResult) {
+        this.hrApproveResult = hrApproveResult;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME", length = 19)
-	public Date getUpdateTime() {
-		return this.updateTime;
-	}
+    @Column(name = "SLDAPPROVE_RESULT")
+    public Integer getSldApproveResult() {
+        return this.sldApproveResult;
+    }
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+    public void setSldApproveResult(Integer sldApproveResult) {
+        this.sldApproveResult = sldApproveResult;
+    }
+
+    @Column(name = "PROCESS_INSTANCE_ID")
+    public String getProcessInstanceId() {
+        return this.processInstanceId;
+    }
+
+    public void setProcessInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CREATE_TIME", length = 19)
+    public Date getCreateTime() {
+        return this.createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "UPDATE_TIME", length = 19)
+    public Date getUpdateTime() {
+        return this.updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 
 }
