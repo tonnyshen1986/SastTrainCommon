@@ -65,6 +65,7 @@ public class Project implements java.io.Serializable {
     private Date planFinishTime;
     private Integer gatherOrNot;
     private Integer certTempId;
+    private Integer printTemplateId;
     private Double trainPrice;
     private String trainHost;
     private String trainSchool;
@@ -86,7 +87,7 @@ public class Project implements java.io.Serializable {
                    Integer testOrNot, Integer testType, String testLibs,
                    String testSubLibs, Integer testRule, Integer reportOrNot,
                    Integer evaluateOrNot, Integer evaluateLib, Integer projectStatus, Integer isOutSchool,
-                   Integer isHistory, Date planFinishTime, Integer gatherOrNot, Integer certTempId, Double trainPrice, String trainHost, String trainSchool, String trainLocation, String projectContent, String projectOrganizerName) {
+                   Integer isHistory, Date planFinishTime, Integer gatherOrNot, Integer certTempId, Integer printTemplateId,Double trainPrice, String trainHost, String trainSchool, String trainLocation, String projectContent, String projectOrganizerName) {
         this.id = id;
         this.organiCode = organiCode;
         this.createBy = createBy;
@@ -129,6 +130,7 @@ public class Project implements java.io.Serializable {
         this.planFinishTime = planFinishTime;
         this.gatherOrNot = gatherOrNot;
         this.certTempId = certTempId;
+        this.printTemplateId = printTemplateId;
         this.trainPrice = trainPrice;
         this.trainHost = trainHost;
         this.trainSchool = trainSchool;
@@ -522,6 +524,15 @@ public class Project implements java.io.Serializable {
 
     public void setCertTempId(Integer certTempId) {
         this.certTempId = certTempId;
+    }
+
+    @Column(name = "PRINT_TEMPLATE_ID")
+    public Integer getPrintTemplateId() {
+        return this.printTemplateId;
+    }
+
+    public void setPrintTemplateId(Integer printTemplateId) {
+        this.printTemplateId = printTemplateId;
     }
 
     @Column(name = "TRAIN_PRICE")
