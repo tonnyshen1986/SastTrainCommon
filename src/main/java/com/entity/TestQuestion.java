@@ -6,7 +6,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -19,160 +21,192 @@ import javax.persistence.TemporalType;
 @Table(name = "SJ_TEST_QUESTION", catalog = "sjtu_train")
 public class TestQuestion implements java.io.Serializable {
 
-	private Integer id;
-	private Integer libId;
-	private String subLibIds;
-	private String seri;
-	private Integer questionOrder;
-	private Integer questionType;
-	private String content;
-	private String optionIds;
-	private String rightAnswer;
-	private String answerAnaly;
-	private Integer del;
-	private Date createTime;
-	private Date updateTime;
+    private Integer id;
+    private Integer libId;
+    private String subLibIds;
+    private String seri;
+    private Integer questionOrder;
+    private Integer questionType;
+    private String content;
+    private String optionIds;
+    private String rightAnswer;
+    private String answerAnaly;
+    private Integer del;
+    private Date createTime;
+    private Date updateTime;
+    private Integer filledAnswerAllowedNoOrder;
+    private Integer filledAnswerCounts;
+    private String shortAnswerKeyWords;
 
-	public TestQuestion() {
-	}
+    public TestQuestion() {
+    }
 
-	public TestQuestion(Integer libId, String subLibIds, String seri,Integer questionOrder,
-			Integer questionType, String content, String optionIds,
-			String rightAnswer, String answerAnaly, Integer del,
-			Date createTime, Date updateTime) {
-		this.libId = libId;
-		this.subLibIds = subLibIds;
-		this.seri = seri;
-		this.questionOrder = questionOrder;
-		this.questionType = questionType;
-		this.content = content;
-		this.optionIds = optionIds;
-		this.rightAnswer = rightAnswer;
-		this.answerAnaly = answerAnaly;
-		this.del = del;
-		this.createTime = createTime;
-		this.updateTime = updateTime;
-	}
+    public TestQuestion(Integer libId, String subLibIds, String seri, Integer questionOrder,
+                        Integer questionType, String content, String optionIds,
+                        String rightAnswer, String answerAnaly, Integer del,
+                        Date createTime, Date updateTime, Integer filledAnswerAllowedNoOrder, Integer filledAnswerCounts,String shortAnswerKeyWords) {
+        this.libId = libId;
+        this.subLibIds = subLibIds;
+        this.seri = seri;
+        this.questionOrder = questionOrder;
+        this.questionType = questionType;
+        this.content = content;
+        this.optionIds = optionIds;
+        this.rightAnswer = rightAnswer;
+        this.answerAnaly = answerAnaly;
+        this.del = del;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.filledAnswerAllowedNoOrder = filledAnswerAllowedNoOrder;
+        this.filledAnswerCounts=filledAnswerCounts;
+        this.shortAnswerKeyWords = shortAnswerKeyWords;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "ID", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "ID", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@Column(name = "LIB_ID")
-	public Integer getLibId() {
-		return this.libId;
-	}
+    @Column(name = "LIB_ID")
+    public Integer getLibId() {
+        return this.libId;
+    }
 
-	public void setLibId(Integer libId) {
-		this.libId = libId;
-	}
+    public void setLibId(Integer libId) {
+        this.libId = libId;
+    }
 
-	@Column(name = "SUB_LIB_IDS")
-	public String getSubLibIds() {
-		return this.subLibIds;
-	}
+    @Column(name = "SUB_LIB_IDS")
+    public String getSubLibIds() {
+        return this.subLibIds;
+    }
 
-	public void setSubLibIds(String subLibIds) {
-		this.subLibIds = subLibIds;
-	}
+    public void setSubLibIds(String subLibIds) {
+        this.subLibIds = subLibIds;
+    }
 
-	@Column(name = "SERI")
-	public String getSeri() {
-		return this.seri;
-	}
+    @Column(name = "SERI")
+    public String getSeri() {
+        return this.seri;
+    }
 
-	public void setSeri(String seri) {
-		this.seri = seri;
-	}
-	
-	@Column(name = "QUESTION_ORDER")
-	public Integer getQuestionOrder() {
-		return questionOrder;
-	}
+    public void setSeri(String seri) {
+        this.seri = seri;
+    }
 
-	public void setQuestionOrder(Integer questionOrder) {
-		this.questionOrder = questionOrder;
-	}
+    @Column(name = "QUESTION_ORDER")
+    public Integer getQuestionOrder() {
+        return questionOrder;
+    }
 
-	@Column(name = "QUESTION_TYPE")
-	public Integer getQuestionType() {
-		return this.questionType;
-	}
+    public void setQuestionOrder(Integer questionOrder) {
+        this.questionOrder = questionOrder;
+    }
 
-	public void setQuestionType(Integer questionType) {
-		this.questionType = questionType;
-	}
+    @Column(name = "QUESTION_TYPE")
+    public Integer getQuestionType() {
+        return this.questionType;
+    }
 
-	@Column(name = "CONTENT")
-	public String getContent() {
-		return this.content;
-	}
+    public void setQuestionType(Integer questionType) {
+        this.questionType = questionType;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    @Column(name = "CONTENT")
+    public String getContent() {
+        return this.content;
+    }
 
-	@Column(name = "OPTION_IDS")
-	public String getOptionIds() {
-		return this.optionIds;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public void setOptionIds(String optionIds) {
-		this.optionIds = optionIds;
-	}
+    @Column(name = "OPTION_IDS")
+    public String getOptionIds() {
+        return this.optionIds;
+    }
 
-	@Column(name = "RIGHT_ANSWER")
-	public String getRightAnswer() {
-		return this.rightAnswer;
-	}
+    public void setOptionIds(String optionIds) {
+        this.optionIds = optionIds;
+    }
 
-	public void setRightAnswer(String rightAnswer) {
-		this.rightAnswer = rightAnswer;
-	}
+    @Column(name = "RIGHT_ANSWER")
+    public String getRightAnswer() {
+        return this.rightAnswer;
+    }
 
-	@Column(name = "ANSWER_ANALY")
-	public String getAnswerAnaly() {
-		return this.answerAnaly;
-	}
+    public void setRightAnswer(String rightAnswer) {
+        this.rightAnswer = rightAnswer;
+    }
 
-	public void setAnswerAnaly(String answerAnaly) {
-		this.answerAnaly = answerAnaly;
-	}
+    @Column(name = "ANSWER_ANALY")
+    public String getAnswerAnaly() {
+        return this.answerAnaly;
+    }
 
-	@Column(name = "DEL")
-	public Integer getDel() {
-		return this.del;
-	}
+    public void setAnswerAnaly(String answerAnaly) {
+        this.answerAnaly = answerAnaly;
+    }
 
-	public void setDel(Integer del) {
-		this.del = del;
-	}
+    @Column(name = "DEL")
+    public Integer getDel() {
+        return this.del;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATE_TIME", length = 19)
-	public Date getCreateTime() {
-		return this.createTime;
-	}
+    public void setDel(Integer del) {
+        this.del = del;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CREATE_TIME", length = 19)
+    public Date getCreateTime() {
+        return this.createTime;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME", length = 19)
-	public Date getUpdateTime() {
-		return this.updateTime;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "UPDATE_TIME", length = 19)
+    public Date getUpdateTime() {
+        return this.updateTime;
+    }
 
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    @Column(name = "FILLEDANSWER_ALLOWEDNOORDER")
+    public Integer getFilledAnswerAllowedNoOrder() {
+        return this.filledAnswerAllowedNoOrder;
+    }
+
+    public void setFilledAnswerAllowedNoOrder(Integer filledAnswerAllowedNoOrder) {
+        this.filledAnswerAllowedNoOrder = filledAnswerAllowedNoOrder;
+    }
+
+    @Column(name = "FILLEDANSWER_COUNTS")
+    public Integer getFilledAnswerCounts() {
+        return this.filledAnswerCounts;
+    }
+
+    public void setFilledAnswerCounts(Integer filledAnswerCounts) {
+        this.filledAnswerCounts = filledAnswerCounts;
+    }
+
+    @Column(name = "SHORTANSWER_KEYWORDS")
+    public String getShortAnswerKeyWords() {
+        return this.shortAnswerKeyWords;
+    }
+
+    public void setShortAnswerKeyWords(String shortAnswerKeyWords) {
+        this.shortAnswerKeyWords = shortAnswerKeyWords;
+    }
 }
