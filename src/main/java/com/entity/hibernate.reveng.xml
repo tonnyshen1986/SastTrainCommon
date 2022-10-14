@@ -3,9 +3,9 @@
 
 <hibernate-reverse-engineering>
 
-	<table catalog="sjtu_train" name="SJ_DIC_COUNTRY" class="DicCountry"></table>
-	<table catalog="sjtu_train" name="SJ_DIC_POLITICAL_STATUS" class="DicPoliticalStatus"></table>
-	<table catalog="sjtu_train" name="SJ_DIC_LONGTERM" class="DicLongterm"></table>
-	<table catalog="sjtu_train" name="SJ_DIC_TEACHER_STATUS" class="DicTeacherStatus"></table>
-	<table catalog="sjtu_train" name="SJ_DIC_POSITION_LEVEL" class="DicPositionLevel"></table>
+	<table catalog="sast_train" name="SJ_DIC_COUNTRY" class="DicCountry"></table>
+	<table catalog="sast_train" name="SJ_DIC_POLITICAL_STATUS" class="DicPoliticalStatus"></table>
+	<table catalog="sast_train" name="SJ_DIC_LONGTERM" class="DicLongterm"></table>
+	<table catalog="sast_train" name="SJ_DIC_TEACHER_STATUS" class="DicTeacherStatus"></table>
+	<table catalog="sast_train" name="SJ_DIC_POSITION_LEVEL" class="DicPositionLevel"></table>
 </hibernate-reverse-engineering>
