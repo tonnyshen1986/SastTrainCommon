@@ -21,232 +21,243 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name = "SJ_PROJECT_SIGN", catalog = "sast_train", uniqueConstraints = {
-		@UniqueConstraint(columnNames = { "CERTIFI_NO", "PROJECT_ID" }),
-		@UniqueConstraint(columnNames = { "ACCOUNT", "PROJECT_ID" }) })
+        @UniqueConstraint(columnNames = {"CERTIFI_NO", "PROJECT_ID"}),
+        @UniqueConstraint(columnNames = {"ACCOUNT", "PROJECT_ID"})})
 public class ProjectSign implements java.io.Serializable {
 
-	private Integer id;
-	private String account;
-	private String certifiNo;
-	private Integer personType;
-	private Integer projectId;
-	private Integer signType;
-	private Integer testScore;
-	private Integer testType;
-	private Integer testStatus;
-	private Integer evaStatus;
-	private Integer reportStatus;
-	private Integer passStatus;
-	private String noPassReason;
-	private String acrossInfo;
-	private Date createTime;
-	private Date updateTime;
-	private String certPath;
-	private String certNumber;
-	private Date certExpireTime;
+    private Integer id;
+    private String account;
+    private String certifiNo;
+    private Integer personType;
+    private Integer projectId;
+    private Integer signType;
+    private Integer testScore;
+    private Integer testType;
+    private Integer testStatus;
+    private Integer evaStatus;
+    private Integer reportStatus;
+    private Integer certStatus;
+    private Integer passStatus;
+    private String noPassReason;
+    private String acrossInfo;
+    private Date createTime;
+    private Date updateTime;
+    private String certPath;
+    private String certNumber;
+    private Date certExpireTime;
 
-	public ProjectSign() {
-	}
+    public ProjectSign() {
+    }
 
-	public ProjectSign(String account, String certifiNo, Integer personType,
-			Integer projectId, Integer signType, Integer testScore,
-			Integer testType, Integer testStatus, Integer evaStatus,
-			Integer reportStatus, Integer passStatus, String noPassReason,String acrossInfo,
-			Date createTime, Date updateTime, String certPath, String certNumber,Date certExpireTime) {
-		this.account = account;
-		this.certifiNo = certifiNo;
-		this.personType = personType;
-		this.projectId = projectId;
-		this.signType = signType;
-		this.testScore = testScore;
-		this.testType = testType;
-		this.testStatus = testStatus;
-		this.evaStatus = evaStatus;
-		this.reportStatus = reportStatus;
-		this.passStatus = passStatus;
-		this.noPassReason = noPassReason;
-		this.acrossInfo = acrossInfo;
-		this.createTime = createTime;
-		this.updateTime = updateTime;
-		this.certPath = certPath;
-		this.certNumber = certNumber;
-		this.certExpireTime = certExpireTime;
-	}
+    public ProjectSign(String account, String certifiNo, Integer personType,
+                       Integer projectId, Integer signType, Integer testScore,
+                       Integer testType, Integer testStatus, Integer evaStatus,
+                       Integer reportStatus, Integer certStatus, Integer passStatus, String noPassReason, String acrossInfo,
+                       Date createTime, Date updateTime, String certPath, String certNumber, Date certExpireTime) {
+        this.account = account;
+        this.certifiNo = certifiNo;
+        this.personType = personType;
+        this.projectId = projectId;
+        this.signType = signType;
+        this.testScore = testScore;
+        this.testType = testType;
+        this.testStatus = testStatus;
+        this.evaStatus = evaStatus;
+        this.reportStatus = reportStatus;
+        this.certStatus = certStatus;
+        this.passStatus = passStatus;
+        this.noPassReason = noPassReason;
+        this.acrossInfo = acrossInfo;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.certPath = certPath;
+        this.certNumber = certNumber;
+        this.certExpireTime = certExpireTime;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "ID", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "ID", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@Column(name = "ACCOUNT")
-	public String getAccount() {
-		return this.account;
-	}
+    @Column(name = "ACCOUNT")
+    public String getAccount() {
+        return this.account;
+    }
 
-	public void setAccount(String account) {
-		this.account = account;
-	}
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-	@Column(name = "CERTIFI_NO")
-	public String getCertifiNo() {
-		return certifiNo;
-	}
+    @Column(name = "CERTIFI_NO")
+    public String getCertifiNo() {
+        return certifiNo;
+    }
 
-	public void setCertifiNo(String certifiNo) {
-		this.certifiNo = certifiNo;
-	}
+    public void setCertifiNo(String certifiNo) {
+        this.certifiNo = certifiNo;
+    }
 
-	@Column(name = "PERSON_TYPE")
-	public Integer getPersonType() {
-		return this.personType;
-	}
+    @Column(name = "PERSON_TYPE")
+    public Integer getPersonType() {
+        return this.personType;
+    }
 
-	public void setPersonType(Integer personType) {
-		this.personType = personType;
-	}
+    public void setPersonType(Integer personType) {
+        this.personType = personType;
+    }
 
-	@Column(name = "PROJECT_ID")
-	public Integer getProjectId() {
-		return this.projectId;
-	}
+    @Column(name = "PROJECT_ID")
+    public Integer getProjectId() {
+        return this.projectId;
+    }
 
-	public void setProjectId(Integer projectId) {
-		this.projectId = projectId;
-	}
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
 
-	@Column(name = "SIGN_TYPE")
-	public Integer getSignType() {
-		return this.signType;
-	}
+    @Column(name = "SIGN_TYPE")
+    public Integer getSignType() {
+        return this.signType;
+    }
 
-	public void setSignType(Integer signType) {
-		this.signType = signType;
-	}
+    public void setSignType(Integer signType) {
+        this.signType = signType;
+    }
 
-	@Column(name = "TEST_SCORE")
-	public Integer getTestScore() {
-		return this.testScore;
-	}
+    @Column(name = "TEST_SCORE")
+    public Integer getTestScore() {
+        return this.testScore;
+    }
 
-	public void setTestScore(Integer testScore) {
-		this.testScore = testScore;
-	}
+    public void setTestScore(Integer testScore) {
+        this.testScore = testScore;
+    }
 
-	@Column(name = "TEST_TYPE")
-	public Integer getTestType() {
-		return this.testType;
-	}
+    @Column(name = "TEST_TYPE")
+    public Integer getTestType() {
+        return this.testType;
+    }
 
-	public void setTestType(Integer testType) {
-		this.testType = testType;
-	}
+    public void setTestType(Integer testType) {
+        this.testType = testType;
+    }
 
-	@Column(name = "TEST_STATUS")
-	public Integer getTestStatus() {
-		return this.testStatus;
-	}
+    @Column(name = "TEST_STATUS")
+    public Integer getTestStatus() {
+        return this.testStatus;
+    }
 
-	public void setTestStatus(Integer testStatus) {
-		this.testStatus = testStatus;
-	}
+    public void setTestStatus(Integer testStatus) {
+        this.testStatus = testStatus;
+    }
 
-	@Column(name = "EVA_STATUS")
-	public Integer getEvaStatus() {
-		return this.evaStatus;
-	}
+    @Column(name = "EVA_STATUS")
+    public Integer getEvaStatus() {
+        return this.evaStatus;
+    }
 
-	public void setEvaStatus(Integer evaStatus) {
-		this.evaStatus = evaStatus;
-	}
+    public void setEvaStatus(Integer evaStatus) {
+        this.evaStatus = evaStatus;
+    }
 
-	@Column(name = "REPORT_STATUS")
-	public Integer getReportStatus() {
-		return this.reportStatus;
-	}
+    @Column(name = "REPORT_STATUS")
+    public Integer getReportStatus() {
+        return this.reportStatus;
+    }
 
-	public void setReportStatus(Integer reportStatus) {
-		this.reportStatus = reportStatus;
-	}
+    public void setReportStatus(Integer reportStatus) {
+        this.reportStatus = reportStatus;
+    }
 
-	@Column(name = "PASS_STATUS")
-	public Integer getPassStatus() {
-		return this.passStatus;
-	}
+    @Column(name = "CERT_STATUS")
+    public Integer getCertStatus() {
+        return this.certStatus;
+    }
 
-	public void setPassStatus(Integer passStatus) {
-		this.passStatus = passStatus;
-	}
+    public void setCertStatus(Integer certStatus) {
+        this.certStatus = certStatus;
+    }
 
-	@Column(name = "NO_PASS_REASON")
-	public String getNoPassReason() {
-		return this.noPassReason;
-	}
+    @Column(name = "PASS_STATUS")
+    public Integer getPassStatus() {
+        return this.passStatus;
+    }
 
-	public void setNoPassReason(String noPassReason) {
-		this.noPassReason = noPassReason;
-	}
-	
-	@Column(name = "ACROSS_INFO")
-	public String getAcrossInfo() {
-		return acrossInfo;
-	}
+    public void setPassStatus(Integer passStatus) {
+        this.passStatus = passStatus;
+    }
 
-	public void setAcrossInfo(String acrossInfo) {
-		this.acrossInfo = acrossInfo;
-	}
+    @Column(name = "NO_PASS_REASON")
+    public String getNoPassReason() {
+        return this.noPassReason;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATE_TIME", length = 19)
-	public Date getCreateTime() {
-		return this.createTime;
-	}
+    public void setNoPassReason(String noPassReason) {
+        this.noPassReason = noPassReason;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    @Column(name = "ACROSS_INFO")
+    public String getAcrossInfo() {
+        return acrossInfo;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME", length = 19)
-	public Date getUpdateTime() {
-		return this.updateTime;
-	}
+    public void setAcrossInfo(String acrossInfo) {
+        this.acrossInfo = acrossInfo;
+    }
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CREATE_TIME", length = 19)
+    public Date getCreateTime() {
+        return this.createTime;
+    }
 
-	@Column(name = "CERT_PATH")
-	public String getCertPath() {
-		return this.certPath;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-	public void setCertPath(String certPath) {
-		this.certPath = certPath;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "UPDATE_TIME", length = 19)
+    public Date getUpdateTime() {
+        return this.updateTime;
+    }
 
-	@Column(name = "CERT_NUMBER")
-	public String getCertNumber() {
-		return this.certNumber;
-	}
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 
-	public void setCertNumber(String certNumber) {
-		this.certNumber = certNumber;
-	}
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CERT_EXPIRE_TIME", length = 19)
-	public Date getCertExpireTime() {
-		return certExpireTime;
-	}
+    @Column(name = "CERT_PATH")
+    public String getCertPath() {
+        return this.certPath;
+    }
 
-	public void setCertExpireTime(Date certExpireTime) {
-		this.certExpireTime = certExpireTime;
-	}
+    public void setCertPath(String certPath) {
+        this.certPath = certPath;
+    }
+
+    @Column(name = "CERT_NUMBER")
+    public String getCertNumber() {
+        return this.certNumber;
+    }
+
+    public void setCertNumber(String certNumber) {
+        this.certNumber = certNumber;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CERT_EXPIRE_TIME", length = 19)
+    public Date getCertExpireTime() {
+        return certExpireTime;
+    }
+
+    public void setCertExpireTime(Date certExpireTime) {
+        this.certExpireTime = certExpireTime;
+    }
 
 }

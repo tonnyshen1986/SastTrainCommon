@@ -29,6 +29,7 @@ public class ProjectPassRule implements java.io.Serializable {
 	private Integer evaluate;
 	private Date evaluateStartTime;
 	private Date evaluateEndTime;
+	private Integer certificate;
 	private Integer report;
 	private Date reportStartTime;
 	private Date reportEndTime;
@@ -44,7 +45,7 @@ public class ProjectPassRule implements java.io.Serializable {
 
 	public ProjectPassRule(Integer projectId, Integer courseSingleOrTogether,
 			Integer courseNumberOrHour, Integer test, Date testStartTime,Date testEndTime,
-			Integer evaluate,Date evaluateStartTime,Date evaluateEndTime,
+			Integer evaluate,Date evaluateStartTime,Date evaluateEndTime,Integer certificate,
 			Integer report, Date reportStartTime,Date reportEndTime,
 			Integer requireNumber, Integer optionalNumber,
 			Integer requireHour, Integer optionalHour, Date createTime,Date updateTime) {
@@ -57,6 +58,7 @@ public class ProjectPassRule implements java.io.Serializable {
 		this.evaluate = evaluate;
 		this.evaluateStartTime = evaluateStartTime;
 		this.evaluateEndTime = evaluateEndTime;
+		this.certificate = certificate;
 		this.report = report;
 		this.reportStartTime = reportStartTime;
 		this.reportEndTime = reportEndTime;
@@ -162,6 +164,15 @@ public class ProjectPassRule implements java.io.Serializable {
 
 	public void setEvaluateEndTime(Date evaluateEndTime) {
 		this.evaluateEndTime = evaluateEndTime;
+	}
+
+	@Column(name = "CERTIFICATE")
+	public Integer getCertificate() {
+		return this.certificate;
+	}
+
+	public void setCertificate(Integer certificate) {
+		this.certificate = certificate;
 	}
 
 	@Column(name = "REPORT")
